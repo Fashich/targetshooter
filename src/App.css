@@ -1,38 +1,251 @@
-.App {
-  text-align: center;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #1c1f2b, #2d1f33, #3a1c30);
+  color: white;
   min-height: 100vh;
+}
+
+.app-container {
+  padding: 1rem 1.5rem;
+}
+
+.max-width-wrapper {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Header */
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00eaff, #9d5eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-header p {
+  opacity: 0.7;
+  font-size: 1.1rem;
+}
+
+/* Start Screen */
+.start-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 2rem;
+  text-align: center;
+}
+
+.info-icon {
+  width: 150px;
+}
+
+.instructions ul {
+  list-style: none;
+  margin-top: 1rem;
+  max-width: 400px;
+}
+
+.instructions li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.bullet {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.green { background-color: #4caf50; }
+.blue { background-color: #2196f3; }
+.yellow { background-color: #ffeb3b; }
+
+.start-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #00eaff, #9d5eff);
+  border: none;
   color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.start-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(157, 94, 255, 0.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Info Boxes */
+.game-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid #444;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.score-box,
+.lives-box,
+.reset-box {
+  text-align: center;
+}
+
+.label {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.lives-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.live {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+}
+
+.live.active {
+  background-color: red;
+}
+
+.live.inactive {
+  background-color: #555;
+}
+
+.reset-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-button:hover {
+  background: #444;
+}
+
+/* Game Area */
+.game-area {
+  position: relative;
+  min-height: 300px;
+  background: rgba(20, 20, 20, 0.8);
+  border-top: 1px solid #444;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.target {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.target-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(to right, red, darkred);
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px red;
+  position: relative;
+}
+
+.center-dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Game Over Overlay */
+.game-over-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+}
+
+.game-over-overlay h2 {
+  font-size: 2.5rem;
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.game-over-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.play-again-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #00eaff, #9d5eff);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.play-again-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(157, 94, 255, 0.6);
+}
+
+/* Footer */
+.game-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
