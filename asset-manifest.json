@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Fashich/targetshooter/static/css/main.b77c79d7.css",
+    "main.js": "/Fashich/targetshooter/static/js/main.585f05d6.js",
+    "static/js/453.37f701fc.chunk.js": "/Fashich/targetshooter/static/js/453.37f701fc.chunk.js",
+    "index.html": "/Fashich/targetshooter/index.html",
+    "main.b77c79d7.css.map": "/Fashich/targetshooter/static/css/main.b77c79d7.css.map",
+    "main.585f05d6.js.map": "/Fashich/targetshooter/static/js/main.585f05d6.js.map",
+    "453.37f701fc.chunk.js.map": "/Fashich/targetshooter/static/js/453.37f701fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b77c79d7.css",
+    "static/js/main.585f05d6.js"
+  ]
+}
