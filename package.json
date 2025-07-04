@@ -1,8 +1,9 @@
 {
-  "homepage": "https://github.com/Fashich/targetshooter",
+  "homepage": "https://www.thalassaaddict.com/targetshooter",
   "name": "targetshooter",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
@@ -52,7 +53,6 @@
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
-    "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
     "web-vitals": "^2.1.4",
     "webpack": "^5.64.4",
@@ -63,10 +63,16 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "electron": "electron .",
+    "electron-dev": "cross-env ELECTRON_IS_DEV='true' electron .",
+    "electron-build": "build",
+    "package": "build && electron-builder",
+    "package-win": "build --win --x64",
+    "package-mac": "build --mac"
   },
   "eslintConfig": {
     "extends": [
@@ -88,9 +94,13 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.7"
+    "wait-on": "^8.0.3"
   },
   "jest": {
     "roots": [
@@ -143,9 +153,14 @@
     ],
     "resetMocks": true
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
+  "build": {
+    "appId": "com.targetshooter.desktop",
+    "productName": "TargetShooter",
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
   }
 }

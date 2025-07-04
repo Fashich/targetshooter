@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Target Shooter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Target Shooter is an interactive web-based game designed to train reflexes, accuracy, and response speed. With a simple yet challenging mechanic, the game challenges players to shoot red targets as quickly as possible using left-click mouse inputs. Each precise shot increases the score, while missed shots reduce lives. The primary goal is to achieve the highest score before lives run out!
+
+## Description
+
+Target Shooter offers a dynamic gameplay experience focused on improving mental and physical agility. Players must react swiftly to randomly appearing targets on the screen. The faster a player shoots the targets, the higher their score. Mistakes or delays reduce lives, adding time pressure and intensity to the game.
+
+## Technologies Used
+
+This application is built using React.js, HTML5, and CSS3, supported by development tools like Webpack and Babel. It is licensed under the MIT License, allowing flexibility in code usage and modification.
+
+## Installation
+
+To run the app, clone the repository using the command
+
+### `git clone https://github.com/Fashich/targetshooter.git`
+
+Install dependencies with
+
+### `npm install`
+
+then start the application via
+
+### `npm start`
+
+Access the game at `http://localhost:3000` in your browser.
+
+## License
+
+This project is licensed under the MIT License. Detailed license terms are provided in the LICENSE.md file.
+
+## Version v1.0.0 (Latest)
+
+Key Features:
+
+- Real-time scoring system.
+- Life management (3 lives per session).
+- Randomly appearing targets.
+- Responsive interface with minimalist design.
+- Instant reset button to restart the game.
+
+## Getting Started with Create React App
+
+This project was bootstrapped with `https://github.com/facebook/create-react-app?spm=a2ty_o01.29997173.0.0.50c3c921W8e28e` .
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+- `npm start` : Runs the app in development mode.
+- `npm test` : Launches the test runner in watch mode.
+- `npm run build` : Builds the app for production in the build folder.
+- `npm run eject` : Exposes configuration files (irreversible).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+For more details, see the `https://facebook.github.io/create-react-app/docs/getting-started?spm=a2ty_o01.29997173.0.0.50c3c921W8e28e` .
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Code Splitting: `https://facebook.github.io/create-react-app/docs/code-splitting?spm=a2ty_o01.29997173.0.0.50c3c921W8e28e`
+- Analyzing Bundle Size `https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size?spm=a2ty_o01.29997173.0.0.50c3c921W8e28e`
+- Progressive Web App Guide `https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app?spm=a2ty_o01.29997173.0.0.50c3c921W8e28e`
+- Deployment Instructions `https://facebook.github.io/create-react-app/docs/deployment?spm=a2ty_o01.29997173.0.0.50c3c921W8e28e`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Notes
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Ensure you have Node.js (v14 or later) and npm installed.
+- For deployment guides (e.g., GitHub Pages, Firebase), refer to the official Create React App documentation.

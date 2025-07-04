@@ -17,9 +17,9 @@ function App() {
         moveTarget();
       }, 1000);
       return () => clearInterval(interval);
-    }
+    } // eslint-disable-next-line
   }, [gameStarted, isGameOver]);
-
+  
   const startGame = () => {
     setScore(0);
     setLives(3);
@@ -79,20 +79,38 @@ function App() {
           {!gameStarted ? (
             <div className="start-screen">
               <div className="instructions">
-                <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                     strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="8" x2="12" y2="12"/>
-                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                <svg
+                  className="info-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
                 </svg>
                 <h2>How to Play</h2>
                 <ul>
-                  <li><span className="bullet green"></span>Click the red targets as fast as you can</li>
-                  <li><span className="bullet blue"></span>You get 1 point for each successful hit</li>
-                  <li><span className="bullet yellow"></span>You have 3 lives - be careful!</li>
+                  <li>
+                    <span className="bullet green"></span>Click the red targets
+                    as fast as you can
+                  </li>
+                  <li>
+                    <span className="bullet blue"></span>You get 1 point for
+                    each successful hit
+                  </li>
+                  <li>
+                    <span className="bullet yellow"></span>You have 3 lives - be
+                    careful!
+                  </li>
                 </ul>
               </div>
-              <button onClick={startGame} className="start-button">Start Game</button>
+              <button onClick={startGame} className="start-button">
+                Start Game
+              </button>
             </div>
           ) : (
             <div className="game-info">
@@ -112,19 +130,25 @@ function App() {
                 </div>
               </div>
               <div className="reset-box">
-                <button onClick={resetGame} className="reset-button">Reset Game</button>
+                <button onClick={resetGame} className="reset-button">
+                  Reset Game
+                </button>
               </div>
             </div>
           )}
 
           {gameStarted && (
-            <div ref={gameAreaRef} className="game-area" onClick={handleMissClick}>
+            <div
+              ref={gameAreaRef}
+              className="game-area"
+              onClick={handleMissClick}
+            >
               <div
                 className="target"
                 style={{
                   left: `${targetPosition.x}px`,
                   top: `${targetPosition.y}px`,
-                  transform: `translate(-50%, -50%)`
+                  transform: `translate(-50%, -50%)`,
                 }}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -139,8 +163,12 @@ function App() {
               {isGameOver && (
                 <div className="game-over-overlay">
                   <h2>Game Over</h2>
-                  <p>Your final score: <span>{score}</span></p>
-                  <button onClick={resetGame} className="play-again-button">Play Again</button>
+                  <p>
+                    Your final score: <span>{score}</span>
+                  </p>
+                  <button onClick={resetGame} className="play-again-button">
+                    Play Again
+                  </button>
                 </div>
               )}
             </div>
@@ -148,7 +176,9 @@ function App() {
         </main>
 
         <footer className="game-footer">
-          <p>© {new Date().getFullYear()} Ahmad Fashich | Target Shooter Game</p>
+          <p>
+            © {new Date().getFullYear()} Ahmad Fashich | Target Shooter Game
+          </p>
         </footer>
       </div>
     </div>
